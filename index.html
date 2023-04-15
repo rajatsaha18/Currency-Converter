@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <h3 class="text-center mt-5">Currency Converter</h3>
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="card card-body">
+                        <h5>Select Currency</h5>
+                        <select name="currency" id="inputCurrency" onchange="firstToSecond()" onclick="firstToSecond()" oninput="firstToSecond()">
+                            
+                            <option value="us">Dollar</option>
+                            <option value="bdt">BDT</option>
+                        </select>
+                        <input type="number" name="first" id="firstCurrency" onclick="firstToSecond()" oninput="firstToSecond()"/>
+                        <br>
+                        <h5>Convert Currency</h5>
+                        <select name="" id="outputCurrency" onchange="firstToSecond()" onclick="firstToSecond()" oninput="firstToSecond()">
+                            
+                            <option value="us1">Dollar</option>
+                            <option value="bdt1">BDT</option>
+                        </select>
+                        <input type="number" name="second" id="secondCurrency" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <!--Javascript Code start-->
+    <script>
+        function firstToSecond(){
+            var inputOne = document.getElementById("firstCurrency").value;
+            var inputTwo = document.getElementById("secondCurrency").value;
+
+            if(document.getElementById("inputCurrency").value == 'us'){
+                if(document.getElementById("outputCurrency").value == 'us1'){
+                    document.getElementById("secondCurrency").value =inputOne*1;
+
+                }
+                else if(document.getElementById("outputCurrency").value == 'bdt1'){
+                    document.getElementById("secondCurrency").value =inputOne*102.50;
+
+                }
+                
+            }
+
+
+            if(document.getElementById("inputCurrency").value == 'bdt'){
+                if(document.getElementById("outputCurrency").value == 'us1'){
+                    document.getElementById("secondCurrency").value =inputOne*0.0094;
+
+                }
+                else if(document.getElementById("outputCurrency").value == 'bdt1'){
+                    document.getElementById("secondCurrency").value =inputOne*1;
+
+                }
+                
+            }
+
+        }
+    </script>
+    <!--Javascript Code end-->
+</body>
+</html>
